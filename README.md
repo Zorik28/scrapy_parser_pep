@@ -28,17 +28,17 @@ The parser can perform the following functions:
 
 The output of the parser in .csv:
 
-"Status","Quantity"
-"Accepted","48"
-"Active","31"
-"April Fool!","1"
-"Deferred","37"
-"Draft","27"
-"Final","269"
-"Rejected","121"
-"Superseded","20"
-"Withdrawn","56"
-"Total","610"
+"Status","Quantity"    
+"Accepted","48"    
+"Active","31"    
+"April Fool!","1"    
+"Deferred","37"    
+"Draft","27"    
+"Final","269"    
+"Rejected","121"    
+"Superseded","20"    
+"Withdrawn","56"    
+"Total","610"    
 
 
 
