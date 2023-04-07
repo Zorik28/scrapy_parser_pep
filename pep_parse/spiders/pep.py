@@ -9,6 +9,8 @@ from pep_parse.items import PepParseItem
 
 
 class PepSpider(Spider):
+    """This spider is implemented to parse number, name and status of PEP."""
+
     name = 'pep'
     allowed_domains = ['peps.python.org']
     start_urls = ['https://peps.python.org/']
@@ -36,4 +38,4 @@ class PepSpider(Spider):
             'status': information.css('abbr::text').get(),
         }
 
-        yield PepParseItem(data)
+        return PepParseItem(data)
