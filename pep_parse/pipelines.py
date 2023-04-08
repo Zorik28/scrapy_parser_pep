@@ -1,7 +1,7 @@
 import csv
 from datetime import datetime
 
-from pep_parse.const import BASE_DIR, DATETIME_FORMAT
+from pep_parse.constants import BASE_DIR, DATETIME_FORMAT
 from pep_parse.utils import mkdir_and_path
 
 
