@@ -4,15 +4,17 @@ from scrapy import Spider
 from scrapy.http.request import Request
 from scrapy.http.response.html import HtmlResponse
 
-from pep_parse.constants import HTTPS_PEPS_PYTHON, ONE_SELECTOR, PEPS_PYTHON
-from pep_parse.enums.peps import Pep
+from pep_parse.constants import (
+    HTTPS_PEPS_PYTHON, ONE_SELECTOR, PEP, PEPS_PYTHON, PEP_NAME, PEP_NUMBER,
+    PEP_TITLE_FOREPART
+)
 from pep_parse.items import PepParseItem
 
 
 class PepSpider(Spider):
     """This spider is implemented to parse number, name and status of PEP."""
 
-    name = 'pep'
+    name = PEP
     allowed_domains = [PEPS_PYTHON]
     start_urls = [HTTPS_PEPS_PYTHON]
 
@@ -34,8 +36,8 @@ class PepSpider(Spider):
             number_and_name = page_title.getall()
             number_and_name = ''.join(number_and_name).split(' – ')
         data = {
-            'number': number_and_name[Pep.title_forepart].split()[Pep.number],
-            'name': number_and_name[Pep.name],
+            'number': number_and_name[PEP_TITLE_FOREPART].split()[PEP_NUMBER],
+            'name': number_and_name[PEP_NAME],
             'status': main_info.css('abbr::text').get(),
         }
 
