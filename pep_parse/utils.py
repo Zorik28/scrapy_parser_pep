@@ -10,6 +10,6 @@ def mkdir_and_path(path: Path, directory: str, filename: str) -> Path:
         return path_dir / filename
     except OSError:
         logging.exception(
-            f'Возникла ошибка при создании папки {directory}',
+            f'Error occurred while creating the folder -> {directory}!',
             stack_info=True
         )
